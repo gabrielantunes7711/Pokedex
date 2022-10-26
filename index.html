@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="assets/css/theme.css" />
+    <title>Pokedex</title>
+  </head>
+  <body>
+    <main class="pokedex-main">
+      <header>
+        <img src="assets/img/pokeball-icon.svg" alt="Pokebola" />
+        <h1>Pokedex</h1>
+      </header>
+
+      <section class="pokemon-list">
+        <form action="">
+          <input type="search" placeholder="Procurar" />
+          <button onclick="teste()">
+            <i class="fa-solid fa-magnifying-glass"></i>
+          </button>
+        </form>
+      </section>
+    </main>
+
+    <div class="modal">
+      <span onclick="modalToggle()">X</span>
+      <section class="pokemon-info">
+        <header>
+          <div class="container-name-number">
+            <h1>
+              <img
+                src="assets/img/arrow-white.svg"
+                alt="Seta para a esquerda"
+              />Bulbasaur
+            </h1>
+            <span>#001</span>
+          </div>
+          <div class="pokemon-image">
+            <img src="assets/img/pokemon.png" alt="" />
+          </div>
+          <img src="assets/img/chevron-white.svg" alt="" />
+          <img src="assets/img/chevron-white.svg" alt="" />
+          <img src="assets/img/pokeball-icon-white.svg" alt="" />
+        </header>
+
+        <main class="main-content">
+          <div class="types"></div>
+          <h2>About</h2>
+          <div class="details">
+            <div class="detail">
+              <img src="assets/img/weight.svg" alt="" />
+              <span class="weight">6,9 kg</span>
+              <span>Weight</span>
+            </div>
+
+            <div class="detail">
+              <img src="assets/img/scale.svg" alt="" />
+              <span class="height">0,7 m</span>
+              <span>Height</span>
+            </div>
+
+            <div class="detail">
+              <div class="moves"></div>
+              <span>Moves</span>
+            </div>
+          </div>
+          <p>
+            There is a plant seed on its back right from the day this Pokémon is
+            born. The seed slowly grows larger.
+          </p>
+          <h2>Base Stats</h2>
+          <div class="stats">
+            <div class="stat">
+              <strong>hp</strong>
+              <span>045</span>
+              <progress value="045" max="150"></progress>
+            </div>
+
+            <div class="stat">
+              <strong>atk</strong>
+              <span>049</span>
+              <progress value="049" max="120"></progress>
+            </div>
+
+            <div class="stat">
+              <strong>def</strong>
+              <span>049</span>
+              <progress value="049" max="120"></progress>
+            </div>
+
+            <div class="stat">
+              <strong>satk</strong>
+              <span>065</span>
+              <progress value="065" max="120"></progress>
+            </div>
+
+            <div class="stat">
+              <strong>sdef</strong>
+              <span>065</span>
+              <progress value="065" max="120"></progress>
+            </div>
+
+            <div class="stat">
+              <strong>spd</strong>
+              <span>045</span>
+              <progress value="045" max="120"></progress>
+            </div>
+          </div>
+        </main>
+      </section>
+    </div>
+
+    <script
+      src="https://kit.fontawesome.com/5f093a3fa3.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="assets/js/app.js"></script>
+  </body>
+</html>
