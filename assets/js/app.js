@@ -119,8 +119,7 @@ function modalToggle(e) {
   } else {
     body.style.overflow = "hidden";
     body.style.paddingRight = "1.7rem";
+    e.preventDefault();
   }
   modal.classList.toggle("open");
-
-  e.preventDefault();
 }
