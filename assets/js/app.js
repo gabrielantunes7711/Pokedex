@@ -2,13 +2,13 @@ const pokemonChoice = document.querySelector("form input").value;
 const pokemonList = document.querySelector(".pokemon-list");
 const pokemonCard = document.querySelector(".pokemon-card");
 const url = `https://pokeapi.co/api/v2/pokemon/`;
-for (let i = 1; i <= 50; i++) {
+for (let i = 1; i <= 200; i++) {
   fetch(url + i)
     .then((res) => res.json())
     .then((pokemon) => {
       const pokemonType = pokemon.types[0].type.name;
       const pokemonImage = pokemon.sprites.other.dream_world.front_default;
-      pokemonList.innerHTML += `<a href="#" class="pokemon-card ${pokemonType}" data-pokemon-index="${i}" onclick="populateModal(this);modalToggle()">
+      pokemonList.innerHTML += `<a href="#" class="pokemon-card ${pokemonType}" data-pokemon-index="${i}" onclick="populateModal(this);modalToggle(event)">
         <span>#0${pokemon.id}</span>
         <img src="${pokemonImage}" alt="Pokemon" />
         <span>${pokemon.name}</span>
@@ -109,14 +109,18 @@ function pokemonColor(pokemonTypes) {
   }
 }
 
-function modalToggle() {
+function modalToggle(e) {
   const modal = document.querySelector(".modal");
   const body = document.querySelector("body");
 
   if (body.style.overflow == "hidden") {
     body.style.overflow = "visible";
+    body.style.paddingRight = "0";
   } else {
     body.style.overflow = "hidden";
+    body.style.paddingRight = "1.7rem";
   }
   modal.classList.toggle("open");
+
+  e.preventDefault();
 }

@@ -306,16 +306,17 @@ form button {
 /* ------- Pokemon Info ------- */
 .modal {
   height: 100vh;
-  padding-block: 4rem;
+
   align-items: center;
   position: fixed;
-  transform: translateX(-100%);
+  transform: translateX(100%);
   top: 0;
-  left: 0;
+  right: 0;
   width: 100vw;
   overflow-y: scroll;
   overflow-x: hidden;
   transition: 300ms;
+  backdrop-filter: blur(5px);
 }
 .modal.open {
   transform: translateX(0);
@@ -327,16 +328,6 @@ form button {
   top: 0;
   cursor: pointer;
   color: var(--main-color);
-}
-.modal::before {
-  content: "";
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100vw;
-  height: 138rem;
-  backdrop-filter: blur(5px);
-  z-index: -1;
 }
 .pokemon-info {
   padding: 0.8rem;
@@ -386,6 +377,7 @@ form button {
   position: relative;
   z-index: 1;
   height: 40rem;
+  width: 40rem;
 }
 .pokemon-info header > img:nth-of-type(1) {
   position: absolute;
@@ -512,4 +504,5 @@ progress::-webkit-progress-bar {
 progress::-webkit-progress-value {
   background-color: var(--main-color);
   border-radius: 8px;
+  transition: 2s;
 }
